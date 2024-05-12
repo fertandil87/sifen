@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Services\FacturacionElectronica\sifen\lib;
 /****************************************************************************\
 
 barcode.php - Generate barcodes from a single PHP file. MIT license.

@@ -2,8 +2,8 @@
 //header ("Content-Type:text/xml");
 
 //ESTE JSON ES PARA HACER PRUEBAS NADA MÁS
-$json = 
-'{"DE":[
+$json =
+    '{"DE":[
         {
             "dSisFact":1,
             "iTipEmi":1,
@@ -90,10 +90,27 @@ $json =
 
 include 'sifen.php';
 
-$xml = new sifen();
+// 8OX%Rx2N
 
-$retorno = $xml->generar_xml($json, "LocoFactura23", "80130124_6.key", "80130124_6.cer");
+
+$keyName = "agua.pem";
+$cerName = "agua.cer";
+$passphrase = "8OX%Rx2N";
+$codigo_secreto = "ABCD0000000000000000000000000000";
+
+$xml = new sifen([
+    'name_llave_privada' => $keyName, 'name_certificado' => $cerName,
+    'pass_llave_privada' => $passphrase, 'codigo_secreto' => $codigo_secreto
+]);
+ 
+
+$retorno = $xml->generar_xml($json, false, true);
+
+ var_dump( $xml->enviar_xml( $retorno[1], false,true ));
+ //echo $xml->ERROR ;
 //echo $retorno[0]; //Indice 0 es el XML, indice 1 es el npumero de la factura o Id
+//echo "Send XML\n\n";
+ //$xml->consultaRUC(1, "4747132", true);
+ echo $xml->ERROR ;
 
-echo $xml->enviar_xml($retorno[1], "80130124_6_send.key", "80130124_6.cer");
-?>
+//echo $xml->enviar_xml($retorno[1] , false);
