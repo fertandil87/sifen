@@ -1,14 +1,14 @@
 {
-    "name": "soniatoledo/sifen",
+    "name": "fertandil87/sifen",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Soniatoledo\\Sifen\\": "src/"
+            "Gvet\\Sifen\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Sonia Toledo"
+            "name": "Fernando Saez"
         }
     ],
     "require": {
