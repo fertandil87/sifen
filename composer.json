@@ -1,6 +1,6 @@
 {
     "name": "fertandil87/sifen",
-    "type": "project",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Gvet\\Sifen\\": "src/"
