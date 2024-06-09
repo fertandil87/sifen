@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\FacturacionElectronica\sifen;
+namespace Gvet\Sifen;
 
-use App\Services\FacturacionElectronica\sifen\lib\barcode_generator;
+use Gvet\Sifen\lib\barcode_generator;
 use DateTime;
 use DOMDocument;
 use Exception;
